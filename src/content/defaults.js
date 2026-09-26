@@ -32,7 +32,7 @@ export function defaultContent() {
       intro:
         'I build cinematic worlds at the intersection of artificial intelligence, fashion and human emotion.',
       cta: 'ENTER ARCHIVE',
-      image: '/hero-editorial.png',
+      image: './hero-editorial.png',
       transform: { x: 0, y: 0, scale: 1 },
       captionLeft: 'IMAGE 001 — EDITORIAL PORTRAIT',
       captionRight: '© LJ / 2026',
@@ -66,9 +66,9 @@ export function defaultContent() {
       desc: 'A living index of films, worlds\nand visual experiments.',
       archive: 'VIEW FULL ARCHIVE',
       projects: [
-        { n: '01', title: '罗马剧场广告', tag: '商业短片 · AIGC 影像', meta: '29秒 · 商业短片 / 调色', video: '/videos/v01.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '02', title: '调色广告片', tag: '商业广告 · 视觉表达', meta: '32秒 · 商业广告 / 视觉调色', video: '/videos/v02.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '03', title: '香水广告', tag: '产品广告 · 氛围叙事', meta: '26秒 · 商业短片 / 氛围叙事', video: '/videos/v03.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '01', title: '罗马剧场广告', tag: '商业短片 · AIGC 影像', meta: '29秒 · 商业短片 / 调色', video: './videos/v01.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '02', title: '调色广告片', tag: '商业广告 · 视觉表达', meta: '32秒 · 商业广告 / 视觉调色', video: './videos/v02.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '03', title: '香水广告', tag: '产品广告 · 氛围叙事', meta: '26秒 · 商业短片 / 氛围叙事', video: './videos/v03.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
         { n: '04', title: '剑桥大学探校VLOG', tag: '纪实 Vlog · 校园影像', meta: '1分38秒 · 纪实 Vlog / 叙事结构', video: '/videos/v04.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '05', title: 'AI大理 VLOG', tag: '旅行影像 · 人文记录', meta: '42秒 · 旅行影像 / 独立成片', video: '/videos/v05.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
         { n: '06', title: '留学IP 口播', tag: '知识口播 · IP 孵化', meta: '1分26秒 · 知识口播 / IP 孵化', video: '/videos/v06.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },

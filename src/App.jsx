@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, Plus, Play, Menu } from 'lucide-react';
 import { useContent } from './content/ContentContext.jsx';
+import { resolveStaticSrc } from './content/useMediaSrc.js';
 import Editable, { RowTools } from './editor/Editable.jsx';
 import MediaPicker from './editor/MediaPicker.jsx';
 import SmartMedia from './editor/SmartMedia.jsx';
@@ -297,8 +298,8 @@ export default function App() {
                   <MediaTransform path={`work.projects.${i}.transform`}>
                     <SmartMedia
                       kind="video"
-                      src={p.video}
-                      poster={p.poster}
+                      src={resolveStaticSrc(p.video)}
+                      poster={resolveStaticSrc(p.poster)}
                       preload="auto"
                       onLoadedMetadata={(e) => {
                         e.currentTarget.currentTime = 0;
@@ -472,8 +473,8 @@ export default function App() {
             </button>
             <SmartMedia
               kind="video"
-              src={activeProject.video}
-              poster={activeProject.poster || '/hero-editorial.png'}
+              src={resolveStaticSrc(activeProject.video)}
+              poster={resolveStaticSrc(activeProject.poster || '/hero-editorial.png')}
               controls
               autoPlay
               preload="auto"

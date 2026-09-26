@@ -1,0 +1,275 @@
+/* 编辑器的视觉：跟着站点主色走（纸灰底 + 墨黑 + 蓝强调），不做第三方后台的样子 */
+:root {
+  --ed-accent: #1f43ff;
+  --ed-accent-soft: rgba(31, 67, 255, 0.12);
+  --ed-line: rgba(17, 18, 20, 0.35);
+  --ed-line-hover: rgba(17, 18, 20, 0.7);
+  --ed-pill: rgba(240, 241, 242, 0.92);
+}
+
+/* 悬浮操作条 */
+.ed-bar {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  font-family: var(--mono, 'DM Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.ed-bar button {
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  border: 1px solid var(--ed-line);
+  background: var(--ed-pill);
+  color: #111214;
+  padding: 9px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.ed-bar button:hover {
+  border-color: var(--ed-accent);
+  color: var(--ed-accent);
+}
+
+.ed-bar-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-color: #111214 !important;
+}
+
+.ed-bar-main.is-on {
+  background: var(--ed-accent);
+  border-color: var(--ed-accent) !important;
+  color: #f0f1f2;
+}
+
+.ed-bar-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ed-accent);
+}
+
+.ed-bar-main.is-on .ed-bar-dot {
+  background: #f0f1f2;
+}
+
+.ed-bar-tools {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.ed-bar .is-danger:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.ed-hint {
+  position: fixed;
+  right: 18px;
+  bottom: 62px;
+  z-index: 60;
+  max-width: 260px;
+  font-family: var(--mono, 'DM Mono', monospace);
+  font-size: 9px;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  color: #4d5055;
+  background: var(--ed-pill);
+  border: 1px solid var(--ed-line);
+  border-radius: 4px;
+  padding: 7px 10px;
+  text-align: right;
+  backdrop-filter: blur(8px);
+}
+
+.ed-hint kbd {
+  font: inherit;
+  border: 1px solid var(--ed-line);
+  border-radius: 3px;
+  padding: 0 3px;
+}
+
+/* 可编辑文本：1px 虚线内阴影，不占位、不撑开布局 */
+.ed-text {
+  outline: none;
+  box-shadow: inset 0 0 0 1px var(--ed-line);
+  border-radius: 2px;
+  transition: box-shadow 0.25s ease;
+  cursor: text;
+}
+
+.ed-text:hover {
+  box-shadow: inset 0 0 0 1px var(--ed-line-hover);
+}
+
+.ed-text:focus {
+  box-shadow: inset 0 0 0 1px var(--ed-accent), 0 0 0 2px var(--ed-accent-soft);
+}
+
+.ed-text:empty:before {
+  content: attr(data-placeholder);
+  color: rgba(77, 80, 85, 0.6);
+}
+
+.ed-pre {
+  white-space: pre-line;
+}
+
+/* 换图 / 换视频的小按钮 */
+.ed-picker {
+  display: inline-flex;
+  gap: 4px;
+  vertical-align: middle;
+}
+
+.ed-picker-btn,
+.ed-row button {
+  font-family: var(--mono, 'DM Mono', monospace);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border: 1px solid var(--line, rgba(17, 18, 20, 0.22));
+  background: rgba(240, 241, 242, 0.86);
+  color: #111214;
+  padding: 4px 8px;
+  border-radius: 999px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.ed-picker-btn:hover,
+.ed-row button:hover {
+  border-color: var(--ed-accent);
+  color: var(--ed-accent);
+}
+
+.ed-row button.is-danger:hover {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+/* 列表项的编辑工具行 */
+.ed-row {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.ed-row--in-grid {
+  grid-column: 1 / -1;
+}
+
+.ed-row--inline {
+  display: inline-flex;
+  margin: 0 0 0 6px;
+  vertical-align: middle;
+}
+
+/* logo 里的可编辑块用 b 标签（避开 .logo span 的蓝），字重保持和原来一致 */
+.logo b {
+  font-weight: 500;
+}
+
+/* 还没上传素材时的占位 */
+.ed-empty {
+  display: block;
+  background: rgba(150, 153, 157, 0.35);
+  box-shadow: inset 0 0 0 1px rgba(17, 18, 20, 0.25);
+  min-height: 120px;
+}
+
+/* 编辑态下把入场动画关掉，改完立刻能看到内容 */
+.editing .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+  animation: none !important;
+}
+
+/* 图片 / 视频的编辑框：拖动滑杆即可调整画面位置与比例，数值会保存到本机。 */
+.media-transform {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+.media-transform__content {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.media-transform__content > img,
+.media-transform__content > video,
+.media-transform__content > .ed-empty {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.media-transform__controls {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 8px;
+  color: #111214;
+  background: rgba(240, 241, 242, .94);
+  border: 1px solid rgba(17, 18, 20, .25);
+  font: 9px var(--mono, monospace);
+  letter-spacing: .03em;
+  backdrop-filter: blur(8px);
+}
+
+.media-transform__controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+
+.media-transform__controls input {
+  width: 54px;
+  accent-color: var(--ed-accent);
+}
+
+.media-transform__controls button {
+  margin-left: auto;
+  border: 1px solid var(--ed-line);
+  background: transparent;
+  padding: 3px 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.media-transform__controls button:hover {
+  color: var(--ed-accent);
+  border-color: var(--ed-accent);
+}
+
+@media (max-width: 800px) {
+  .media-transform__controls {
+    transform: scale(.88);
+    transform-origin: left bottom;
+    right: auto;
+    width: max-content;
+  }
+}

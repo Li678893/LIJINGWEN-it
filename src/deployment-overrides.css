@@ -1,0 +1,10 @@
+/* Final presentation adjustments for the public portfolio. */
+@media (min-width: 801px) {
+  .nav nav a {
+    font-size: 20px;
+  }
+}
+
+.outline-btn {
+  color: #fafafa !important;
+}

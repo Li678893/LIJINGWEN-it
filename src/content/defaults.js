@@ -14,20 +14,20 @@ export function defaultContent() {
 
     nav: {
       logo: 'LJ',
-      logoMark: 'ARCHIVE',
-      menu: 'INDEX',
+      logoMark: '作品集',
+      menu: '目录',
       links: [
-        { label: 'SELECTED WORK', href: '#work' },
-        { label: 'ABOUT', href: '#about' },
-        { label: 'CONTACT', href: '#contact' },
+        { label: '作品', href: '#work' },
+        { label: '关于', href: '#about' },
+        { label: '联系', href: '#contact' },
       ],
     },
 
     hero: {
       watermarkTop: 'AIGC',
-      watermarkBottom: 'DIRECTOR',
+      watermarkBottom: 'LJWEN',
       topline: ['SHANGHAI / CN', '2025—2026 / VOL. 01', 'SCROLL TO EXPLORE ↓'],
-      eyebrow: 'AIGC DIRECTOR / VISUAL STORYTELLER',
+      eyebrow: 'AIGC / VISUAL STORYTELLER',
       title: { l1: 'MAKE', l2: 'THE', l3: 'UNREAL', l4: 'FEEL', l5: 'REAL.' },
       intro:
         'I build cinematic worlds at the intersection of artificial intelligence, fashion and human emotion.',
@@ -73,12 +73,13 @@ export function defaultContent() {
         { n: '05', title: 'AI大理 VLOG', tag: '旅行影像 · 人文记录', meta: '42秒 · 旅行影像 / 独立成片', video: '/videos/v05.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
         { n: '06', title: '留学IP 口播', tag: '知识口播 · IP 孵化', meta: '1分26秒 · 知识口播 / IP 孵化', video: '/videos/v06.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
         { n: '07', title: '拆迁口播', tag: '知识内容 · 节奏剪辑', meta: '52秒 · 知识内容 / 节奏剪辑', video: '/videos/v07.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '08', title: 'AI数字人口播', tag: '知识口播 · 观点表达', meta: '46秒 · 知识口播 / 观点表达', video: '/videos/v08.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '08', title: 'AI口播-薪资选择', tag: '知识口播 · 观点表达', meta: '知识口播 · 薪资选择', video: '/videos/v08.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '09', title: '无人机航拍空镜', tag: '航拍影像 · 空间叙事', meta: '43秒 · 航拍影像 / 运镜设计', video: '/videos/v09.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
         { n: '10', title: '城市夜景AI', tag: '城市影像 · 氛围剪辑', meta: '38秒 · 城市影像 / 氛围剪辑', video: '/videos/v10.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '11', title: '人像精修剪辑', tag: '人物影像 · 人物包装', meta: '14秒 · 人物影像 / 人物包装', video: '/videos/v11.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '12', title: '人物调色', tag: '人物影像 · 色彩设计', meta: '31秒 · 人物影像 / 色彩设计', video: '/videos/v12.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '13', title: 'AI短片', tag: 'AIGC 人物 · 对话叙事', meta: '36秒 · AI 人物 / 正反打', video: '/videos/v13.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '11', title: 'AI短片', tag: 'AIGC 人物 · 对话叙事', meta: '36秒 · AI 人物 / 正反打', video: '/videos/v13.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '12', title: 'AI律师口播', tag: '知识口播 · 法律内容', meta: '律师口播 · 内容表达', video: '/videos/v14.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '13', title: '信息流1', tag: '信息流广告 · 短视频内容', meta: '信息流广告 · 内容表达', video: '/videos/v15.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '14', title: '信息流2', tag: '信息流广告 · 短视频内容', meta: '信息流广告 · 内容表达', video: '/videos/v16.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
       ],
     },
 

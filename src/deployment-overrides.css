@@ -1,10 +1,106 @@
 /* Final presentation adjustments for the public portfolio. */
+body,
+.site {
+  background: #f1f2f3 !important;
+}
+
+.site::before,
+.site::after,
+.grain {
+  display: none;
+}
+
+/* Pages 02, 03 and 05 share the supplied grey texture; other pages retain their own visuals. */
+.resume-page,
+.about,
+.capabilities {
+  background-color: #d4d4d4;
+  background-image: url('/images/site-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Reserve enough room for the full three-character about-page title. */
+.about-profile-photo {
+  overflow: visible;
+}
+
+.about-profile-photo h2 {
+  min-width: 220px;
+  overflow: visible;
+  letter-spacing: 0 !important;
+}
+
+/* Place the hero watermark on the left without moving the headline. */
+.hero-watermark {
+  left: 6vw;
+  right: auto;
+  transform: none !important;
+}
+
+@media (max-width: 800px) {
+  .hero-watermark {
+    left: 4vw;
+  }
+}
+
 @media (min-width: 801px) {
   .nav nav a {
     font-size: 20px;
   }
+
+  .resume-contact p:nth-child(3) {
+    font-size: 25px !important;
+  }
 }
 
-.outline-btn {
+.hero-copy .outline-btn,
+.hero-copy .outline-btn span {
   color: #fafafa !important;
+}
+
+/* Keep project-video posters in their original color before playback. */
+.project .media video,
+.project:hover .media video {
+  filter: none;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
+/* Keep every project preview in a consistent vertical-video frame. */
+.project .media,
+.project.wide .media,
+.project.tall .media,
+.project.square .media {
+  aspect-ratio: 9 / 16;
+}
+
+/* Contact information is intentionally more prominent on desktop. */
+@media (min-width: 801px) {
+  .contact-description,
+  .contact-description > span {
+    font-size: 18px !important;
+  }
+
+  .contact-pill,
+  .contact-pill > span,
+  .contact-status,
+  .contact-status > span:nth-child(2) {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact-description,
+  .contact-description > span {
+    font-size: 16px !important;
+  }
+
+  .contact-pill,
+  .contact-pill > span,
+  .contact-status,
+  .contact-status > span:nth-child(2) {
+    font-size: 16px !important;
+  }
 }

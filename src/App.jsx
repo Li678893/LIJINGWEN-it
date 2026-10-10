@@ -211,7 +211,7 @@ export default function App() {
               <p>✉　17612294812@163.com</p>
       <p>⌖　北京 </p>
             </div>
-            <a className="resume-download" href="/简历_李婧雯_短视频编导.docx" download>下载简历 ↓</a>
+            <a className="resume-download" href={resolveStaticSrc('/简历_李婧雯_短视频编导.docx')} download>下载简历 ↓</a>
             <div className="resume-facts">
               <span>2004.08<small>出生年月</small></span>
               <span>2年<small>工作经验</small></span>
@@ -222,8 +222,8 @@ export default function App() {
           <div className="resume-main reveal reveal--delay1">
             <div className="resume-heading"><span>WORK EXPERIENCE / 工作经历</span><h2>工作经历</h2></div>
             <div className="timeline">
-              <article><time>2024.10 — 2026.09</time><h3>北京金诚同达（杭州）律师事务所 <em>IP 编导</em></h3><p>0-1 搭建婚姻律师账号，负责选题策划、文案撰写、拍摄统筹与直播节奏协同；产出 350+ 条作品，单条最高播放 600W+，账号涨粉 8W+，月用户留资提升至 280+。</p></article>
-              <article><time>2024.02 — 2024.09</time><h3>上海国瓴律师事务所 <em>运营实习生</em></h3><p>负责律师账号选题、直播切片、剪辑发布与视觉统一；产出 230+ 条视频，日均更新 2+ 条，跑通“切片—剪辑—发布—成交转化”链路。</p></article>
+              <article><time>2024.09 — 2026.10</time><h3>北京金诚同达（杭州）律师事务所 <em>IP 编导</em></h3><p>0-1 搭建婚姻律师账号，负责选题策划、文案撰写、拍摄统筹与直播节奏协同；产出 350+ 条作品，单条最高播放 600W+，账号涨粉 9W+，月用户留资提升至 280+。</p></article>
+              <article><time>2024.03 — 2024.09</time><h3>上海国瓴律师事务所 <em>运营实习生</em></h3><p>负责律师账号选题、直播切片、剪辑发布与视觉统一；产出 230+ 条视频，日均更新 2+ 条，跑通“切片—剪辑—发布—成交转化”链路。</p></article>
               <article><time>2022.09 — 2026.06</time><h3>天津仁爱学院 <em>财务管理 · 全日制本科</em></h3><p>持续积累内容策划、影像表达与视觉系统搭建能力，形成从创意到成片的完整工作方法。</p></article>
             </div>
             <div className="resume-highlight"><strong>560+</strong><span>短视频产出</span><strong>823W+</strong><span>单条最高播放</span><strong>10000+</strong><span>平台公域留资</span></div>

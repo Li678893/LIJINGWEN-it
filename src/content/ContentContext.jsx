@@ -19,7 +19,62 @@ function loadStored() {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return null
     const parsed = JSON.parse(raw)
-    return parsed?.version === CONTENT_VERSION ? parsed : null
+    if (parsed?.version !== CONTENT_VERSION) return null
+    // Keep existing local edits while translating the fixed site navigation.
+    const labels = ['作品', '关于', '联系']
+    parsed.nav = {
+      ...parsed.nav,
+      logoMark: '作品集',
+      menu: '目录',
+      links: parsed.nav.links.map((link, index) => ({
+        ...link,
+        label: labels[index] || link.label,
+      })),
+    }
+    parsed.hero = {
+      ...parsed.hero,
+      watermarkBottom: 'LJWEN',
+      eyebrow: 'AIGC / VISUAL STORYTELLER',
+    }
+    if (!parsed.work.projects.some((project) => project.video?.endsWith('/videos/v14.mp4'))) {
+      parsed.work.projects.push({
+        n: String(parsed.work.projects.length + 1).padStart(2, '0'),
+        title: '律师口播',
+        tag: '知识口播 · 法律内容',
+        meta: '律师口播 · 内容表达',
+        video: '/videos/v14.mp4',
+        poster: '',
+        cls: 'tall',
+        transform: { x: 0, y: 0, scale: 1 },
+      })
+    }
+    const addedProjects = [
+      { title: '信息流1', tag: '信息流广告 · 短视频内容', meta: '信息流广告 · 内容表达', video: '/videos/v15.mp4' },
+      { title: '信息流2', tag: '信息流广告 · 短视频内容', meta: '信息流广告 · 内容表达', video: '/videos/v16.mp4' },
+    ]
+    addedProjects.forEach((project) => {
+      if (!parsed.work.projects.some((item) => item.video?.endsWith(project.video))) {
+        parsed.work.projects.push({
+          n: String(parsed.work.projects.length + 1).padStart(2, '0'),
+          ...project,
+          poster: '',
+          cls: 'tall',
+          transform: { x: 0, y: 0, scale: 1 },
+        })
+      }
+    })
+    parsed.work.projects = parsed.work.projects
+      .filter((project) => !['/videos/v11.mp4', '/videos/v12.mp4'].some((video) => project.video?.endsWith(video)))
+      .map((project, index) => {
+      if (project.video?.endsWith('/videos/v08.mp4')) {
+        return { ...project, n: String(index + 1).padStart(2, '0'), title: 'AI口播-薪资选择', meta: '知识口播 · 薪资选择' }
+      }
+      if (project.video?.endsWith('/videos/v14.mp4')) {
+        return { ...project, n: String(index + 1).padStart(2, '0'), title: 'AI律师口播' }
+      }
+      return { ...project, n: String(index + 1).padStart(2, '0') }
+    })
+    return parsed
   } catch {
     return null
   }

@@ -77,11 +77,12 @@ body,
 }
 
 .project.landscape .media {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
 }
 
 .project.landscape .media video {
   object-fit: contain;
+  transform: none;
 }
 
 /* Contact information is intentionally more prominent on desktop. */

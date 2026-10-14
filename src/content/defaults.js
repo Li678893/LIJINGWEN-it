@@ -66,6 +66,7 @@ export function defaultContent() {
       desc: 'A living index of films, worlds\nand visual experiments.',
       archive: 'VIEW FULL ARCHIVE',
       projects: [
+        { n: '01', title: '《全家福里少的那个人》', tag: '短片作品', meta: '16:9 横版短片', video: '/videos/v17.mp4', poster: '', cls: 'landscape', transform: { x: 0, y: 0, scale: 1 } },
         { n: '01', title: '罗马剧场广告', tag: '商业短片 · AIGC 影像', meta: '29秒 · 商业短片 / 调色', video: './videos/v01.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
         { n: '02', title: '调色广告片', tag: '商业广告 · 视觉表达', meta: '32秒 · 商业广告 / 视觉调色', video: './videos/v02.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '03', title: '香水广告', tag: '产品广告 · 氛围叙事', meta: '26秒 · 商业短片 / 氛围叙事', video: './videos/v03.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
@@ -80,7 +81,7 @@ export function defaultContent() {
         { n: '12', title: 'AI律师口播', tag: '知识口播 · 法律内容', meta: '律师口播 · 内容表达', video: '/videos/v14.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '13', title: '信息流1', tag: '信息流广告 · 短视频内容', meta: '信息流广告 · 内容表达', video: '/videos/v15.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '14', title: '信息流2', tag: '信息流广告 · 短视频内容', meta: '信息流广告 · 内容表达', video: '/videos/v16.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
-      ],
+      ].map((project, index) => ({ ...project, n: String(index + 1).padStart(2, '0') })),
     },
 
     caps: {

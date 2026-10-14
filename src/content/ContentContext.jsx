@@ -63,6 +63,12 @@ function loadStored() {
         })
       }
     })
+    const featuredVideo = '/videos/v17.mp4'
+    const featuredProject = parsed.work.projects.find((project) => project.video?.endsWith(featuredVideo))
+    parsed.work.projects = [
+      { ...featuredProject, title: '《全家福里少的那个人》', tag: '短片作品', meta: '16:9 横版短片', video: featuredVideo, poster: featuredProject?.poster || '', cls: 'landscape', transform: { x: 0, y: 0, scale: 1 } },
+      ...parsed.work.projects.filter((project) => !project.video?.endsWith(featuredVideo)),
+    ]
     parsed.work.projects = parsed.work.projects
       .filter((project) => !['/videos/v11.mp4', '/videos/v12.mp4'].some((video) => project.video?.endsWith(video)))
       .map((project, index) => {

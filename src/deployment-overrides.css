@@ -76,6 +76,14 @@ body,
   aspect-ratio: 9 / 16;
 }
 
+.project.landscape .media {
+  aspect-ratio: 16 / 9;
+}
+
+.project.landscape .media video {
+  object-fit: contain;
+}
+
 /* Contact information is intentionally more prominent on desktop. */
 @media (min-width: 801px) {
   .contact-description,

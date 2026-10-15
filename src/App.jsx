@@ -211,7 +211,6 @@ export default function App() {
               <p>✉　17612294812@163.com</p>
       <p>⌖　北京 </p>
             </div>
-            <a className="resume-download" href={resolveStaticSrc('/简历_李婧雯_短视频编导.docx')} download>下载简历 ↓</a>
             <div className="resume-facts">
               <span>2004.08<small>出生年月</small></span>
               <span>2年<small>工作经验</small></span>

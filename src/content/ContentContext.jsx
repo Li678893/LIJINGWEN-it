@@ -72,6 +72,12 @@ function loadStored() {
     parsed.work.projects = parsed.work.projects
       .filter((project) => !['/videos/v11.mp4', '/videos/v12.mp4'].some((video) => project.video?.endsWith(video)))
       .map((project, index) => {
+      if (['/videos/v01.mp4', '/videos/v18.mp4'].some((video) => project.video?.endsWith(video))) {
+        return { ...project, n: String(index + 1).padStart(2, '0'), title: '彩礼绝对是婚前最狠的照妖镜', tag: '律师口播 · 婚姻话题', meta: '彩礼话题 · 观点表达', video: '/videos/v18.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } }
+      }
+      if (['/videos/v03.mp4', '/videos/v19.mp4'].some((video) => project.video?.endsWith(video))) {
+        return { ...project, n: String(index + 1).padStart(2, '0'), title: '国外结婚不要彩礼，为啥国内必须给', tag: '律师口播 · 热点话题', meta: '彩礼话题 · 观点表达', video: '/videos/v19.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } }
+      }
       if (project.video?.endsWith('/videos/v08.mp4')) {
         return { ...project, n: String(index + 1).padStart(2, '0'), title: 'AI口播-薪资选择', meta: '知识口播 · 薪资选择' }
       }

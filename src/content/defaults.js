@@ -67,9 +67,9 @@ export function defaultContent() {
       archive: 'VIEW FULL ARCHIVE',
       projects: [
         { n: '01', title: '《全家福里少的那个人》', tag: '短片作品', meta: '16:9 横版短片', video: '/videos/v17.mp4', poster: '', cls: 'landscape', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '01', title: '罗马剧场广告', tag: '商业短片 · AIGC 影像', meta: '29秒 · 商业短片 / 调色', video: './videos/v01.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '01', title: '彩礼绝对是婚前最狠的照妖镜', tag: '律师口播 · 婚姻话题', meta: '彩礼话题 · 观点表达', video: '/videos/v18.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '02', title: '调色广告片', tag: '商业广告 · 视觉表达', meta: '32秒 · 商业广告 / 视觉调色', video: './videos/v02.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
-        { n: '03', title: '香水广告', tag: '产品广告 · 氛围叙事', meta: '26秒 · 商业短片 / 氛围叙事', video: './videos/v03.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
+        { n: '03', title: '国外结婚不要彩礼，为啥国内必须给', tag: '律师口播 · 热点话题', meta: '彩礼话题 · 观点表达', video: '/videos/v19.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '04', title: '剑桥大学探校VLOG', tag: '纪实 Vlog · 校园影像', meta: '1分38秒 · 纪实 Vlog / 叙事结构', video: '/videos/v04.mp4', poster: '', cls: 'tall', transform: { x: 0, y: 0, scale: 1 } },
         { n: '05', title: 'AI大理 VLOG', tag: '旅行影像 · 人文记录', meta: '42秒 · 旅行影像 / 独立成片', video: '/videos/v05.mp4', poster: '', cls: 'wide', transform: { x: 0, y: 0, scale: 1 } },
         { n: '06', title: '留学IP 口播', tag: '知识口播 · IP 孵化', meta: '1分26秒 · 知识口播 / IP 孵化', video: '/videos/v06.mp4', poster: '', cls: 'square', transform: { x: 0, y: 0, scale: 1 } },
